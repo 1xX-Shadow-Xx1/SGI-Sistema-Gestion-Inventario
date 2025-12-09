@@ -9,5 +9,6 @@ namespace SGI.Domain.Entities.Usuarios
         public string Correo { get; set; } 
         public string Contraseña { get; set; }
         public bool Activo { get; set; }
-    }
+        public Rol Rol { get; set; }
+        }
 }

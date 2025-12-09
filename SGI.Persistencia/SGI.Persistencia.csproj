@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="Mappers\Inventarios\" />
-    <Folder Include="Mappers\Usuarios\" />
     <Folder Include="Repositorios\Inventarios\" />
     <Folder Include="Repositorios\Usuarios\" />
   </ItemGroup>
