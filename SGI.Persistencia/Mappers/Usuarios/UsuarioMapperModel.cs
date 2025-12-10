@@ -5,113 +5,56 @@ namespace SGI.Persistencia.Mappers.Usuarios
 {
     public class UsuarioMapperModel
     {
-        public static UsuarioModel Create(Usuario usuario)
+        public static Usuario MapperUsuario(UsuarioModel model)
         {
-            return new UsuarioModel
+            return new Usuario
             {
-                id_Rol = usuario.Rol.Id,
-                nombre = usuario.Nombre,
-                nombreCompleto = usuario.Empleado,
-                correo = usuario.Correo,
-                contraseña = usuario.Contraseña,
-                activo = usuario.Activo,
-                Fecha_Creacion = usuario.Fecha_creacion,
-                IsDeleted = usuario.IsDeleted                
+                ID = model.ID,
+                Nombre = model.nombre,
+                Empleado = model.nombreCompleto,
+                Correo = model.correo,
+                Contraseña = model.contraseña,
+                Activo = model.activo,
+                Rol = RolMapperModel.MapperRol(model.rolModel),
+                Fecha_creacion = model.Fecha_Creacion,
+                Fecha_modificacion = model.Fecha_Modificacion,
+                IsDeleted = model.IsDeleted
             };
         }
-        public static UsuarioModel Update(Usuario usuario)
+        public static List<Usuario> MapperListUsuario(ICollection<UsuarioModel> model)
         {
-            return new UsuarioModel
+            List<Usuario> lista = new List<Usuario>();
+            foreach (var item in model)
             {
-                id_usuario = usuario.ID,
-                id_Rol = usuario.Rol.Id,
-                nombre = usuario.Nombre,
-                nombreCompleto = usuario.Empleado,
-                correo = usuario.Correo,
-                contraseña = usuario.Contraseña,
-                activo = usuario.Activo,
-                Fecha_Creacion = usuario.Fecha_creacion,
-                Fecha_Modificacion = usuario.Fecha_modificacion,
-                IsDeleted = usuario.IsDeleted                
-            };
-        }
-        public static UsuarioModel Remove(Usuario usuario)
-        {
-            return new UsuarioModel
-            {
-                id_usuario = usuario.ID,
-                id_Rol = usuario.Rol.Id,
-                nombre = usuario.Nombre,
-                nombreCompleto = usuario.Empleado,
-                correo = usuario.Correo,
-                contraseña = usuario.Contraseña,
-                activo = usuario.Activo,
-                Fecha_Creacion = usuario.Fecha_creacion,
-                Fecha_Modificacion = usuario.Fecha_modificacion,
-                IsDeleted = true               
-            };
-        }
-        public static List<Usuario> GetUser(List<UsuarioModel> usuariosModel)
-        {
-            List<Usuario> usuarios = new List<Usuario>();
-            foreach (var usuarioModel in usuariosModel)
-            {
-                Usuario usuario = new Usuario
-                {
-                    ID = usuarioModel.id_usuario,
-                    Nombre = usuarioModel.nombre,
-                    Empleado = usuarioModel.nombreCompleto,
-                    Correo = usuarioModel.correo,
-                    Contraseña = usuarioModel.contraseña,
-                    Activo = usuarioModel.activo,
-                    Fecha_creacion = usuarioModel.Fecha_Creacion,
-                    Fecha_modificacion = usuarioModel.Fecha_Modificacion,
-                    IsDeleted = usuarioModel.IsDeleted,
-                    Rol = new Rol
-                    {
-                        Id = usuarioModel.id_Rol
-                    }
-                };
-                usuarios.Add(usuario);
+                lista.Add(MapperUsuario(item));
             }
-            return usuarios;
+            return lista;
         }
-        public static Usuario GetUser(UsuarioModel usuarioModel)
-        {
-            Usuario usuario = new Usuario
-            {
-                ID = usuarioModel.id_usuario,
-                Nombre = usuarioModel.nombre,
-                Empleado = usuarioModel.nombreCompleto,
-                Correo = usuarioModel.correo,
-                Contraseña = usuarioModel.contraseña,
-                Activo = usuarioModel.activo,
-                Fecha_creacion = usuarioModel.Fecha_Creacion,
-                Fecha_modificacion = usuarioModel.Fecha_Modificacion,
-                IsDeleted = usuarioModel.IsDeleted,
-                Rol = new Rol
-                {
-                    Id = usuarioModel.id_Rol
-
-                }
-            };
-            return usuario;
-        }
-        public static UsuarioModel Delete(Usuario usuario)
+        public static UsuarioModel MapperUsuarioModel(Usuario entity)
         {
             return new UsuarioModel
             {
-                id_usuario = usuario.ID,
-                id_Rol = usuario.Rol.Id,
-                nombre = usuario.Nombre,
-                nombreCompleto = usuario.Empleado,
-                correo = usuario.Correo,
-                contraseña = usuario.Contraseña,
-                activo = usuario.Activo,
-                Fecha_Creacion = usuario.Fecha_creacion,
-                Fecha_Modificacion = usuario.Fecha_modificacion,
-                IsDeleted = true                
+                ID = entity.ID,
+                nombre = entity.Nombre,
+                nombreCompleto = entity.Empleado,
+                correo = entity.Correo,
+                contraseña = entity.Contraseña,
+                rolModel = RolMapperModel.MapperRolModel(entity.Rol),
+                id_Rol = entity.Rol.ID,
+                activo = entity.Activo,
+                Fecha_Creacion = entity.Fecha_creacion,
+                Fecha_Modificacion = entity.Fecha_modificacion,
+                IsDeleted = entity.IsDeleted
             };
+        }
+        public static List<UsuarioModel> MapperListUsuarioModel(ICollection<Usuario> entity)
+        {
+            List<UsuarioModel> lista = new List<UsuarioModel>();
+            foreach (var item in entity)
+            {
+                lista.Add(MapperUsuarioModel(item));
+            }
+            return lista;
         }
     }
 }

@@ -14,7 +14,7 @@ namespace SGI.Domain.ValidatorHelpers.Usuarios
         public static bool ValidateUpdate(Rol rol, out string errorMessage)
         {
             if (!ValidatorHelper.IsNullObjet<Rol>(rol, "El rol", out errorMessage)) return false;
-            if (!ValidatorHelper.IsValidateID(rol.Id, out errorMessage)) return false;
+            if (!ValidatorHelper.IsValidateID(rol.ID, out errorMessage)) return false;
             if (!ValidatorHelper.IsNullString(rol.Nombre, "El nombre", out errorMessage)) return false;
             return true;
         }
@@ -22,7 +22,7 @@ namespace SGI.Domain.ValidatorHelpers.Usuarios
         public static bool ValidateRemove(Rol rol, out string errorMessage)
         {
             if (!ValidatorHelper.IsNullObjet<Rol>(rol, "El rol", out errorMessage)) return false;
-            if (!ValidatorHelper.IsValidateID(rol.Id, out errorMessage)) return false;
+            if (!ValidatorHelper.IsValidateID(rol.ID, out errorMessage)) return false;
             return true;
         }
     }

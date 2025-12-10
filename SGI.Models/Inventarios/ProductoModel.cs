@@ -2,7 +2,6 @@
 {
     public class ProductoModel : baseModel
     {
-        public int id_producto { get; set; }
         public string nombre { get; set; } = string.Empty;
         public decimal precio { get; set; } 
         public decimal impuesto { get; set; }

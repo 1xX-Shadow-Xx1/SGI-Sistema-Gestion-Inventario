@@ -1,11 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SGI.Domain.Base;
 using SGI.Domain.Repository;
+using SGI.Models;
 using SGI.Persistencia.Context;
 
 namespace SGI.Persistencia.Base
 {
-    public abstract class baseRepositorio<TEntity> : IbaseRepository<TEntity> where TEntity : baseEntity
+    public abstract class baseRepositorio<TEntity> : IbaseRepository<TEntity> where TEntity : baseModel
     {
         private readonly SGIContext _context;
         private readonly DbSet<TEntity> _dbSet;
@@ -19,7 +20,7 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                entity.Fecha_creacion = DateTime.Now;
+                entity.Fecha_Creacion = DateTime.Now;
                 _dbSet.Add(entity);
                 await _context.SaveChangesAsync();
                 return new OperationResult().Ok($"Se a guardado correctamente.", entity);
@@ -33,7 +34,7 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                entity.Fecha_modificacion = DateTime.Now;
+                entity.Fecha_Modificacion = DateTime.Now;
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync();
                 return new OperationResult().Ok($"Se a actualizado correctamente.", entity);
@@ -48,6 +49,7 @@ namespace SGI.Persistencia.Base
             try
             {
                 entity.IsDeleted = true;
+                entity.Fecha_Modificacion = DateTime.Now;
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync();
                 return new OperationResult().Ok($"Se a eliminado correctamente.", entity);
@@ -73,7 +75,7 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                var entity = await _dbSet.FirstOrDefaultAsync(u => u.ID == id && u.IsDeleted == IsDeleted);
+                var entity = await _dbSet.FirstOrDefaultAsync(u => u.ID == id);
                 return new OperationResult().Ok("Entidad obtenida correctamente.", entity);
             }
             catch (Exception ex)

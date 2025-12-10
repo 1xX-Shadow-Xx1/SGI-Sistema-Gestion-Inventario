@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers\Inventarios\" />
     <Folder Include="Repositorios\Inventarios\" />
     <Folder Include="Repositorios\Usuarios\" />
   </ItemGroup>
