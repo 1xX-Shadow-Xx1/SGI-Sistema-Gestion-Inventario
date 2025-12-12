@@ -12,7 +12,6 @@ namespace SGI.Domain.Entities.Inventarios
         public bool IsAvailable { get; set; }
         public string? URL_Imagen { get; set; }
         public string? Codigo_Barra { get; set; }
-        public bool IsDeleted { get; set; }
         public string? Garantia { get; set; }
     }
 }

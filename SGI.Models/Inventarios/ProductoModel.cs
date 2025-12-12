@@ -1,5 +1,8 @@
-﻿namespace SGI.Models.Inventarios
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SGI.Models.Inventarios
 {
+    [Table("Productos")]
     public class ProductoModel : baseModel
     {
         public string nombre { get; set; } = string.Empty;

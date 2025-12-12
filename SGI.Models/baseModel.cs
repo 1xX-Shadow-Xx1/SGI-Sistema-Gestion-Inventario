@@ -1,10 +1,13 @@
-﻿namespace SGI.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SGI.Models
 {
     public abstract class baseModel
     {
-        public int ID { get; set; }
-        public bool IsDeleted { get; set; }
-        public DateTime Fecha_Creacion { get; set; } = DateTime.Now;
-        public DateTime? Fecha_Modificacion { get; set; }
+        [Key]
+        public int id { get; set; }
+        public bool isDeleted { get; set; }
+        public DateTime fecha_creacion { get; set; } = DateTime.Now;
+        public DateTime? fecha_modificacion { get; set; }
     }
 }

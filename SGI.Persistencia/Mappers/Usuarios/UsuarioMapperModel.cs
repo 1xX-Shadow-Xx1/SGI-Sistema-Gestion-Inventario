@@ -9,16 +9,16 @@ namespace SGI.Persistencia.Mappers.Usuarios
         {
             return new Usuario
             {
-                ID = model.ID,
+                ID = model.id,
                 Nombre = model.nombre,
                 Empleado = model.nombreCompleto,
                 Correo = model.correo,
                 Contraseña = model.contraseña,
                 Activo = model.activo,
                 Rol = RolMapperModel.MapperRol(model.rolModel),
-                Fecha_creacion = model.Fecha_Creacion,
-                Fecha_modificacion = model.Fecha_Modificacion,
-                IsDeleted = model.IsDeleted
+                Fecha_creacion = model.fecha_creacion,
+                Fecha_modificacion = model.fecha_modificacion,
+                IsDeleted = model.isDeleted
             };
         }
         public static List<Usuario> MapperListUsuario(ICollection<UsuarioModel> model)
@@ -34,7 +34,7 @@ namespace SGI.Persistencia.Mappers.Usuarios
         {
             return new UsuarioModel
             {
-                ID = entity.ID,
+                id = entity.ID,
                 nombre = entity.Nombre,
                 nombreCompleto = entity.Empleado,
                 correo = entity.Correo,
@@ -42,9 +42,9 @@ namespace SGI.Persistencia.Mappers.Usuarios
                 rolModel = RolMapperModel.MapperRolModel(entity.Rol),
                 id_Rol = entity.Rol.ID,
                 activo = entity.Activo,
-                Fecha_Creacion = entity.Fecha_creacion,
-                Fecha_Modificacion = entity.Fecha_modificacion,
-                IsDeleted = entity.IsDeleted
+                fecha_creacion = entity.Fecha_creacion,
+                fecha_modificacion = entity.Fecha_modificacion,
+                isDeleted = entity.IsDeleted
             };
         }
         public static List<UsuarioModel> MapperListUsuarioModel(ICollection<Usuario> entity)

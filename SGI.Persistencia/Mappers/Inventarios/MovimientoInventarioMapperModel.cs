@@ -10,7 +10,7 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new MovimientoInventario
             {
-                ID = model.id_movimiento,
+                ID = model.id,
                 Cantidad = model.cantidad,
                 TipoMovimiento = (TipoMovimiento)model.tipo_movimiento,
                 Fecha_movimiento = model.fecha_movimiento,
@@ -31,7 +31,7 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new MovimientoInventarioModel
             {
-                id_movimiento = entity.ID,
+                id = entity.ID,
                 cantidad = entity.Cantidad,
                 tipo_movimiento = (int)entity.TipoMovimiento,
                 fecha_movimiento = entity.Fecha_movimiento,

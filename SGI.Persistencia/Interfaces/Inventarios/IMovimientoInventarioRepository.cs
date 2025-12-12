@@ -1,9 +1,11 @@
-﻿using SGI.Domain.Entities.Operacion;
-using SGI.Domain.Repository;
+﻿using SGI.Domain.Base;
+using SGI.Models.Inventarios;
 
 namespace SGI.Persistencia.Interfaces.Inventarios
 {
-    public interface IMovimientoInventarioRepository : IbaseRepository<MovimientoInventario>
+    public interface IMovimientoInventarioRepository 
     {
+        Task<OperationResult> SaveAsync(MovimientoInventarioModel model);
+        Task<OperationResult> DeleteAsync(MovimientoInventarioModel model);
     }
 }

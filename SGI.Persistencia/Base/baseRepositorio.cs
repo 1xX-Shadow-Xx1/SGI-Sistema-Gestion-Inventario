@@ -20,10 +20,10 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                entity.Fecha_Creacion = DateTime.Now;
+                entity.fecha_creacion = DateTime.Now;
                 _dbSet.Add(entity);
                 await _context.SaveChangesAsync();
-                return new OperationResult().Ok($"Se a guardado correctamente.", entity);
+                return OperationResult.Ok($"Se a guardado correctamente.", entity);
             }
             catch (Exception ex)
             {
@@ -34,10 +34,10 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                entity.Fecha_Modificacion = DateTime.Now;
+                entity.fecha_modificacion = DateTime.Now;
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync();
-                return new OperationResult().Ok($"Se a actualizado correctamente.", entity);
+                return OperationResult.Ok($"Se a actualizado correctamente.", entity);
             }
             catch (Exception ex)
             {
@@ -48,11 +48,11 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                entity.IsDeleted = true;
-                entity.Fecha_Modificacion = DateTime.Now;
+                entity.isDeleted = true;
+                entity.fecha_modificacion = DateTime.Now;
                 _dbSet.Update(entity);
                 await _context.SaveChangesAsync();
-                return new OperationResult().Ok($"Se a eliminado correctamente.", entity);
+                return OperationResult.Ok($"Se a eliminado correctamente.", entity);
             }
             catch (Exception ex)
             {
@@ -64,7 +64,7 @@ namespace SGI.Persistencia.Base
             try
             {
                 await _dbSet.ToListAsync();
-                return new OperationResult().Ok("Lista obtenida correctamente.", await _dbSet.ToListAsync());
+                return OperationResult.Ok("Lista obtenida correctamente.", await _dbSet.ToListAsync());
             }
             catch (Exception ex)
             {
@@ -75,8 +75,8 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                var entity = await _dbSet.FirstOrDefaultAsync(u => u.ID == id);
-                return new OperationResult().Ok("Entidad obtenida correctamente.", entity);
+                var entity = await _dbSet.FirstOrDefaultAsync(u => u.id == id);
+                return OperationResult.Ok("Entidad obtenida correctamente.", entity);
             }
             catch (Exception ex)
             {
@@ -87,14 +87,14 @@ namespace SGI.Persistencia.Base
         {
             try
             {
-                var entity = await _dbSet.FirstOrDefaultAsync(e => e.ID == id);
+                var entity = await _dbSet.FirstOrDefaultAsync(e => e.id == id);
                 if (entity == null)
                 {
-                    return new OperationResult().Fail("Entidad no encontrada.");
+                    return OperationResult.Fail("Entidad no encontrada.");
                 }
                 _dbSet.Remove(entity);
                 await _context.SaveChangesAsync();
-                return new OperationResult().Ok($"Se ha eliminado correctamente.", entity);
+                return OperationResult.Ok($"Se ha eliminado correctamente.", entity);
 
             }
             catch (Exception ex)

@@ -10,7 +10,7 @@ namespace SGI.Persistencia.Mappers.Usuarios
         {
             return new Rol
             {
-                ID = rol.id_rol,
+                ID = rol.id,
                 Nombre = rol.nombre,
                 Descripcion = rol.descripcion,
                 Permisos = PermisoMapperModel.MapperListPermiso(rol.permisoModels)
@@ -29,7 +29,7 @@ namespace SGI.Persistencia.Mappers.Usuarios
         {
             return new RolModel
             {
-                id_rol = rol.ID,
+                id = rol.ID,
                 nombre = rol.Nombre,
                 descripcion = rol.Descripcion,
                 permisoModels = PermisoMapperModel.MapperListPermisoModel(rol.Permisos)

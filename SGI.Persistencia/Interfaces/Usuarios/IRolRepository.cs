@@ -1,9 +1,14 @@
-﻿using SGI.Domain.Entities.Usuarios;
-using SGI.Domain.Repository;
+﻿using SGI.Domain.Base;
+using SGI.Domain.Entities.Usuarios;
 
 namespace SGI.Persistencia.Interfaces.Usuarios
 {
-    public interface IRolRepository : IbaseRepository<Rol>
+    public interface IRolRepository 
     {
+        Task<OperationResult> GetAllAsync();
+        Task<OperationResult> GetByIdAsync(int id);
+        Task<OperationResult> SaveAsync(Rol rol);
+        Task<OperationResult> UpdateAsync(Rol rol);
+        Task<OperationResult> DeleteAsync(Rol rol);
     }
 }

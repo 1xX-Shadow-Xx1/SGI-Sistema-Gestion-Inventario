@@ -9,12 +9,12 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new Catalogo
             {
-                ID = model.ID,
+                ID = model.id,
                 Nombre = model.nombre,
                 Descripcion = model.descripcion,
-                IsDeleted = model.IsDeleted,
-                Fecha_creacion = model.Fecha_Creacion,
-                Fecha_modificacion = model.Fecha_Modificacion,
+                IsDeleted = model.isDeleted,
+                Fecha_creacion = model.fecha_creacion,
+                Fecha_modificacion = model.fecha_modificacion,
                 Inventario = InventarioMapperModel.MapperInventario(model.inventarioModel)
             };
         }
@@ -31,12 +31,12 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new CatalogoModel
             {
-                ID = entity.ID,
+                id = entity.ID,
                 nombre = entity.Nombre,
                 descripcion = entity.Descripcion,
-                IsDeleted = entity.IsDeleted,
-                Fecha_Creacion = entity.Fecha_creacion,
-                Fecha_Modificacion = entity.Fecha_modificacion,
+                isDeleted = entity.IsDeleted,
+                fecha_creacion = entity.Fecha_creacion,
+                fecha_modificacion = entity.Fecha_modificacion,
                 id_inventario = entity.Inventario.ID,
                 inventarioModel = InventarioMapperModel.MapperInventarioModel(entity.Inventario)
             };

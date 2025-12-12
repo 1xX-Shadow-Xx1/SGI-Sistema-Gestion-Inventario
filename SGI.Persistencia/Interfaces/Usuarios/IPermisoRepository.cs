@@ -1,9 +1,9 @@
-﻿using SGI.Domain.Entities.Usuarios;
-using SGI.Domain.Repository;
+﻿using SGI.Domain.Base;
 
 namespace SGI.Persistencia.Interfaces.Usuarios
 {
-    public interface IPermisoRepository : IbaseRepository<Permiso>
+    public interface IPermisoRepository 
     {
+        Task<OperationResult> GetAllPermisosAsync();
     }
 }

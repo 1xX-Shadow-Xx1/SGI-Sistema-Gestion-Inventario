@@ -9,11 +9,11 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new Inventario
             {
-                ID = model.ID,
+                ID = model.id,
                 Cantidad = model.stock,
-                Fecha_creacion = model.Fecha_Creacion,
-                Fecha_modificacion = model.Fecha_Modificacion,
-                IsDeleted = model.IsDeleted,
+                Fecha_creacion = model.fecha_creacion,
+                Fecha_modificacion = model.fecha_modificacion,
+                IsDeleted = model.isDeleted,
                 Producto = ProductoMapperModel.MapperProducto(model.productoModel)
             };
         }
@@ -30,11 +30,11 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new InventarioModel
             {
-                ID = entity.ID,
+                id = entity.ID,
                 stock = entity.Cantidad,
-                Fecha_Creacion = entity.Fecha_creacion,
-                Fecha_Modificacion = entity.Fecha_modificacion,
-                IsDeleted = entity.IsDeleted,
+                fecha_creacion = entity.Fecha_creacion,
+                fecha_modificacion = entity.Fecha_modificacion,
+                isDeleted = entity.IsDeleted,
                 productoModel = ProductoMapperModel.MapperProductoModel(entity.Producto),
                 id_producto = entity.Producto.ID
             };

@@ -9,7 +9,7 @@ namespace SGI.Domain.Entities.Operacion
         public int Cantidad { get; set; }
         public DateTime Fecha_movimiento { get; set; }
         public TipoMovimiento TipoMovimiento { get; set; } // "Entrada" o "Salida"
-        public string? Referencia { get; set; } = string.Empty;
+        public int? Referencia { get; set; } 
 
         public Producto Producto { get; set; }
     }

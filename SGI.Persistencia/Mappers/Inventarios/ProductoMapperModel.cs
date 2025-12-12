@@ -9,7 +9,7 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new Producto
             {
-                ID = model.ID,
+                ID = model.id,
                 Nombre = model.nombre,
                 Descripcion = model.descripcion,
                 Precio = model.precio,
@@ -19,9 +19,9 @@ namespace SGI.Persistencia.Mappers.Inventarios
                 ITBIS = model.impuesto,
                 Garantia = model.garantia,
                 URL_Imagen = model.url_img,
-                Fecha_creacion = model.Fecha_Creacion,
-                Fecha_modificacion = model.Fecha_Modificacion,
-                IsDeleted = model.IsDeleted
+                Fecha_creacion = model.fecha_creacion,
+                Fecha_modificacion = model.fecha_modificacion,
+                IsDeleted = model.isDeleted
             };
         }
         public static List<Producto> MapperListProducto(List<ProductoModel> model)
@@ -37,7 +37,7 @@ namespace SGI.Persistencia.Mappers.Inventarios
         {
             return new ProductoModel
             {
-                ID = entity.ID,
+                id = entity.ID,
                 nombre = entity.Nombre,
                 descripcion = entity.Descripcion,
                 precio = entity.Precio,
@@ -47,9 +47,9 @@ namespace SGI.Persistencia.Mappers.Inventarios
                 impuesto = entity.ITBIS,
                 garantia = entity.Garantia,
                 url_img = entity.URL_Imagen,
-                Fecha_Creacion = entity.Fecha_creacion,
-                Fecha_Modificacion = entity.Fecha_modificacion,
-                IsDeleted = entity.IsDeleted
+                fecha_creacion = entity.Fecha_creacion,
+                fecha_modificacion = entity.Fecha_modificacion,
+                isDeleted = entity.IsDeleted
             };
         }
         public static List<ProductoModel> MapperListProductoModel(List<Producto> entity)
