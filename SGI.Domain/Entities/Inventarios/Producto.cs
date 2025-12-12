@@ -13,5 +13,6 @@ namespace SGI.Domain.Entities.Inventarios
         public string? URL_Imagen { get; set; }
         public string? Codigo_Barra { get; set; }
         public string? Garantia { get; set; }
+        public string? Marca { get; set; }
     }
 }

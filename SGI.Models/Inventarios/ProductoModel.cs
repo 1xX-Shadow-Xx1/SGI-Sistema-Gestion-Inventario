@@ -14,5 +14,6 @@ namespace SGI.Models.Inventarios
         public string? codigo_br { get; set; } = string.Empty;
         public string? url_img { get; set; } = string.Empty;
         public string? garantia { get; set; } = string.Empty;
+        public string? marca { get; set; } = string.Empty;
     }
 }
