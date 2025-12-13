@@ -76,7 +76,7 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             }
             catch (Exception ex)
             {
-                
+
                 _logger.LogError(ex, "Error obteniendo la lista de Usuarios");
                 return OperationResult.Fail("Error al intentar obtener la lista de usuarios.");
             }
@@ -92,7 +92,7 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             }
             catch (Exception ex)
             {
-                
+
                 _logger.LogError(ex, "Error obteniendo el Usuario entity");
                 return OperationResult.Fail("Error al intentar obtener el usuario.");
             }
@@ -109,7 +109,7 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             }
             catch (Exception ex)
             {
-                
+
                 _logger.LogError(ex, "Error eliminando el Usuario entity");
                 return OperationResult.Fail("Error al intentar eliminar el usuario.");
             }
