@@ -20,6 +20,7 @@ namespace SGI.Persistencia.Mappers.Inventarios
                 Marca = model.marca,
                 Garantia = model.garantia,
                 URL_Imagen = model.url_img,
+                Size = model.size,
                 Fecha_creacion = model.fecha_creacion,
                 Fecha_modificacion = model.fecha_modificacion,
                 IsDeleted = model.isDeleted
@@ -49,6 +50,7 @@ namespace SGI.Persistencia.Mappers.Inventarios
                 marca = entity.Marca,
                 garantia = entity.Garantia,
                 url_img = entity.URL_Imagen,
+                size = entity.Size,
                 fecha_creacion = entity.Fecha_creacion,
                 fecha_modificacion = entity.Fecha_modificacion,
                 isDeleted = entity.IsDeleted
