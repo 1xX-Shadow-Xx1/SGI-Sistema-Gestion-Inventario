@@ -15,6 +15,6 @@ namespace SGI.Models.Inventarios
         public string? url_img { get; set; } = string.Empty;
         public string? garantia { get; set; } = string.Empty;
         public string? marca { get; set; } = string.Empty;
-        public string? size { get; set; } = string.Empty;
+        public decimal? size { get; set; } 
     }
 }
