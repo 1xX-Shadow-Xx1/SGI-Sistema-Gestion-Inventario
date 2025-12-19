@@ -6,7 +6,7 @@ using SGI.Models.Usuarios;
 using SGI.Persistencia.Base;
 using SGI.Persistencia.Context;
 using SGI.Persistencia.Interfaces.Usuarios;
-using SGI.Persistencia.Mappers.Usuarios;
+using SGI.Persistencia.MapperModels.Usuarios;
 
 namespace SGI.Persistencia.Repositorios.Usuarios
 {

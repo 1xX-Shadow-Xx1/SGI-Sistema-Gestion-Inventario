@@ -1,6 +1,7 @@
-﻿using SGI.Domain.Entities.Inventarios;
+﻿using SGI.Appication.ValidatorHelpers.ValidatorDtos;
+using SGI.Domain.Entities.Inventarios;
 
-namespace SGI.Domain.ValidatorHelpers.Inventarios
+namespace SGI.Appication.ValidatorHelpers.ValidatorDtos.Inventarios
 {
     public class CatalogoValidate
     {

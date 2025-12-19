@@ -1,4 +1,4 @@
-﻿namespace SGI.Domain.ValidatorHelpers
+﻿namespace SGI.Appication.ValidatorHelpers.ValidatorDtos
 {
     public static class ValidatorHelper
     {

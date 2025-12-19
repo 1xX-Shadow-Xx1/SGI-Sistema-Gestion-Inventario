@@ -1,6 +1,7 @@
-﻿using SGI.Domain.Entities.Usuarios;
+﻿using SGI.Appication.ValidatorHelpers.ValidatorDtos;
+using SGI.Domain.Entities.Usuarios;
 
-namespace SGI.Domain.ValidatorHelpers.Usuarios
+namespace SGI.Appication.ValidatorHelpers.ValidatorDtos.Usuarios
 {
     public class RolValidate
     {

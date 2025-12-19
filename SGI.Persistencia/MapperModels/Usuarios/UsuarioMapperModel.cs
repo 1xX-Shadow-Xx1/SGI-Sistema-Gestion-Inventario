@@ -1,7 +1,8 @@
 ﻿using SGI.Domain.Entities.Usuarios;
 using SGI.Models.Usuarios;
+using SGI.Persistencia.Mappers.Usuarios;
 
-namespace SGI.Persistencia.Mappers.Usuarios
+namespace SGI.Persistencia.MapperModels.Usuarios
 {
     public class UsuarioMapperModel
     {

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Dtos\" />
+    <Folder Include="MapperDtos\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Base\" />
+    <Folder Include="Sevicios\" />
+    <Folder Include="ValidatorHelpers\ValidatorLogic\" />
+  </ItemGroup>
+
+</Project>
