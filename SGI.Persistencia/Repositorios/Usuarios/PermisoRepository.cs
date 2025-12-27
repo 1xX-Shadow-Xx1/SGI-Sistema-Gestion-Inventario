@@ -4,7 +4,6 @@ using SGI.Domain.Base;
 using SGI.Models.Usuarios;
 using SGI.Persistencia.Context;
 using SGI.Persistencia.Interfaces.Usuarios;
-using SGI.Persistencia.Mappers.Usuarios;
 
 namespace SGI.Persistencia.Repositorios.Usuarios
 {
@@ -26,9 +25,8 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             try
             {
                 var listModel = await _dbset.ToListAsync();
-                var listPermisos = PermisoMapperModel.MapperListPermiso(listModel);
                 _logger.LogInformation("Lista de permisos obtenida correctamente en el metodo GetAllPermisosAsync.");
-                return OperationResult.Ok("Lista de permisos obtenida correctamente.", listPermisos);
+                return OperationResult.Ok("Lista de permisos obtenida correctamente.", listModel);
             }
             catch (Exception ex)
             {

@@ -1,14 +1,14 @@
-﻿using SGI.Domain.Base;
+﻿using SGI.Appication.Dtos.Usuarios.RolDtos;
 
-namespace SGI.Domain.Entities.Usuarios
+namespace SGI.Appication.Dtos.Usuarios.UsuarioDtos
 {
-    public class Usuario : baseEntity
+    public class UsuarioDto : BaseDtos
     {
         public string Nombre { get; set; }
         public string Empleado { get; set; }
         public string Correo { get; set; }
         public string Contraseña { get; set; }
         public bool Activo { get; set; }
-        public Rol Rol { get; set; }
+        public RolDto RolDto { get; set; }
     }
 }

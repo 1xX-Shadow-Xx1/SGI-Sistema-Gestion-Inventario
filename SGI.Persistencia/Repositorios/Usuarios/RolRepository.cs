@@ -5,7 +5,6 @@ using SGI.Domain.Entities.Usuarios;
 using SGI.Models.Usuarios;
 using SGI.Persistencia.Context;
 using SGI.Persistencia.Interfaces.Usuarios;
-using SGI.Persistencia.Mappers.Usuarios;
 
 namespace SGI.Persistencia.Repositorios.Usuarios
 {
@@ -22,14 +21,14 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             _dbSet = context.Set<RolModel>();
         }
 
-        public async Task<OperationResult> DeleteAsync(Rol rol)
+        public async Task<OperationResult> DeleteAsync(RolModel rolmodel)
         {
             try
             {
 
-                _dbSet.Remove(RolMapperModel.MapperRolModel(rol));
+                _dbSet.Remove(rolmodel);
                 await _context.SaveChangesAsync();
-                _logger.LogInformation($"El rol con id {rol.ID} ha sido eliminado.");
+                _logger.LogInformation($"El rol con id {rolmodel.id} ha sido eliminado.");
                 return OperationResult.Ok("Eliminado correctamente.");
 
             }catch(Exception ex)
@@ -43,9 +42,8 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             try
             {
                 var listaModel = await _dbSet.ToListAsync();
-                var lista = RolMapperModel.MapperListRol(listaModel);
                 _logger.LogInformation("Se obtuvo la lista de roles correctamente.");
-                return OperationResult.Ok("Se obtuvo la lista correctamente.", lista);
+                return OperationResult.Ok("Se obtuvo la lista correctamente.", listaModel);
 
             }
             catch(Exception ex)
@@ -66,7 +64,7 @@ namespace SGI.Persistencia.Repositorios.Usuarios
                     return OperationResult.Fail("No se encontro ninguno rol con ese id.");
                 }
                 _logger.LogInformation($"Se obtuvo el rol con id {id} correctamente.");
-                return OperationResult.Ok("Se obtuvo el rol correctamente.", RolMapperModel.MapperRol(rolmodel));
+                return OperationResult.Ok("Se obtuvo el rol correctamente.", rolmodel);
                 
             }catch(Exception ex)
             {
@@ -74,11 +72,11 @@ namespace SGI.Persistencia.Repositorios.Usuarios
                 throw ex;
             }
         }
-        public async Task<OperationResult> SaveAsync(Rol rol)
+        public async Task<OperationResult> SaveAsync(RolModel rolmodel)
         {
             try
             {
-                _dbSet.Add(RolMapperModel.MapperRolModel(rol));
+                _dbSet.Add(rolmodel);
                 await _context.SaveChangesAsync();
                 _logger.LogInformation("Se ha guardado un nuevo rol correctamente.");
                 return OperationResult.Ok("Se ha guardado correctamente.");
@@ -89,18 +87,18 @@ namespace SGI.Persistencia.Repositorios.Usuarios
                 throw ex;
             }
         }
-        public async Task<OperationResult> UpdateAsync(Rol rol)
+        public async Task<OperationResult> UpdateAsync(RolModel rolmodel)
         {
             try
             {
-                _dbSet.Update(RolMapperModel.MapperRolModel(rol));
+                _dbSet.Update(rolmodel);
                 await _context.SaveChangesAsync();
-                _logger.LogInformation($"El rol con id {rol.ID} ha sido actualizado correctamente.");
-                return OperationResult.Ok("Se a actualizado correctamente.", rol);
+                _logger.LogInformation($"El rol con id {rolmodel.id} ha sido actualizado correctamente.");
+                return OperationResult.Ok("Se a actualizado correctamente.", rolmodel);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error al actualizar el rol con id {rol.ID}.");
+                _logger.LogError(ex, $"Error al actualizar el rol con id {rolmodel.id}.");
                 throw ex;
             }
         }

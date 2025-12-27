@@ -4,7 +4,6 @@ using SGI.Models.Inventarios;
 using SGI.Persistencia.Base;
 using SGI.Persistencia.Context;
 using SGI.Persistencia.Interfaces.Inventarios;
-using SGI.Persistencia.Mappers.Inventarios;
 
 namespace SGI.Persistencia.Repositorios.Inventarios
 {
@@ -23,7 +22,6 @@ namespace SGI.Persistencia.Repositorios.Inventarios
             {
                 var result = await base.RemoveAsync(model);
                 _logger.LogInformation("Inventario entity removido correctamente");
-                result.Data = InventarioMapperModel.MapperInventario(model);
                 return result;
             }
             catch (Exception ex)
@@ -38,7 +36,6 @@ namespace SGI.Persistencia.Repositorios.Inventarios
             {
                 var result = await base.SaveAsync(model);
                 _logger.LogInformation("Inventario entity guardado correctamente");
-                result.Data = InventarioMapperModel.MapperInventario(model);
                 return result;
             }
             catch (Exception ex)
@@ -53,7 +50,6 @@ namespace SGI.Persistencia.Repositorios.Inventarios
             {
                 var result = await base.UpdateAsync(model);
                 _logger.LogInformation("Inventario entity actualizado correctamente");
-                result.Data = InventarioMapperModel.MapperInventario(model);
                 return result;
             }
             catch (Exception ex)
@@ -68,7 +64,6 @@ namespace SGI.Persistencia.Repositorios.Inventarios
             {
                 var result = await base.GetAllAsync(IsDeleted);
                 _logger.LogInformation("Inventarios obtenidos correctamente");
-                result.Data = InventarioMapperModel.MapperListInventario(result.Data);
                 return result;
             }
             catch (Exception ex)
@@ -83,7 +78,6 @@ namespace SGI.Persistencia.Repositorios.Inventarios
             {
                 var result = await base.GetByIdAsync(id, IsDeleted);
                 _logger.LogInformation("Inventario entity obtenido correctamente");
-                result.Data = InventarioMapperModel.MapperInventario(result.Data);
                 return result;
             }
             catch (Exception ex)
@@ -98,7 +92,6 @@ namespace SGI.Persistencia.Repositorios.Inventarios
             {
                 var result = await base.DeleteAsync(id);
                 _logger.LogInformation("Inventario entity eliminado correctamente");
-                result.Data = InventarioMapperModel.MapperInventario(result.Data);
                 return result;
             }
             catch (Exception ex)

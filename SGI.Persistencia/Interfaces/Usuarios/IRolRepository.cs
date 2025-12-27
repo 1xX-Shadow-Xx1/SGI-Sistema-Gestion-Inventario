@@ -1,5 +1,6 @@
 ﻿using SGI.Domain.Base;
-using SGI.Domain.Entities.Usuarios;
+using SGI.Models.Usuarios;
+
 
 namespace SGI.Persistencia.Interfaces.Usuarios
 {
@@ -7,8 +8,8 @@ namespace SGI.Persistencia.Interfaces.Usuarios
     {
         Task<OperationResult> GetAllAsync();
         Task<OperationResult> GetByIdAsync(int id);
-        Task<OperationResult> SaveAsync(Rol rol);
-        Task<OperationResult> UpdateAsync(Rol rol);
-        Task<OperationResult> DeleteAsync(Rol rol);
+        Task<OperationResult> SaveAsync(RolModel rol);
+        Task<OperationResult> UpdateAsync(RolModel rol);
+        Task<OperationResult> DeleteAsync(RolModel rol);
     }
 }

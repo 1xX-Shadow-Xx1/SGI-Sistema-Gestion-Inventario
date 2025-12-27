@@ -6,7 +6,6 @@ using SGI.Models.Usuarios;
 using SGI.Persistencia.Base;
 using SGI.Persistencia.Context;
 using SGI.Persistencia.Interfaces.Usuarios;
-using SGI.Persistencia.MapperModels.Usuarios;
 
 namespace SGI.Persistencia.Repositorios.Usuarios
 {
@@ -26,7 +25,6 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             {
                 var result = await base.RemoveAsync(model);
                 _logger.LogInformation("Usuario entity removido correctamente");
-                result.Data = UsuarioMapperModel.MapperUsuario(model);
                 return result;
             }
             catch (Exception ex)
@@ -41,7 +39,6 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             {
                 var result = await base.SaveAsync(model);
                 _logger.LogInformation("Usuario entity guardado correctamente");
-                result.Data = UsuarioMapperModel.MapperUsuario(model);
                 return result;
             }
             catch (Exception ex)
@@ -56,7 +53,6 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             {
                 var result = await base.UpdateAsync(model);
                 _logger.LogInformation("Usuario entity actualizado correctamente");
-                result.Data = UsuarioMapperModel.MapperUsuario(model);
                 return result;
             }
             catch (Exception ex)
@@ -71,12 +67,10 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             {
                 var result = await base.GetAllAsync(IsDeleted);
                 _logger.LogInformation("Usuarios obtenidos correctamente");
-                result.Data = UsuarioMapperModel.MapperListUsuario(result.Data);
                 return result;
             }
             catch (Exception ex)
             {
-
                 _logger.LogError(ex, "Error obteniendo la lista de Usuarios");
                 return OperationResult.Fail("Error al intentar obtener la lista de usuarios.");
             }
@@ -87,7 +81,6 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             {
                 var result = await base.GetByIdAsync(id, IsDeleted);
                 _logger.LogInformation("Usuario entity obtenido correctamente");
-                result.Data = UsuarioMapperModel.MapperUsuario(result.Data);
                 return result;
             }
             catch (Exception ex)
@@ -103,7 +96,6 @@ namespace SGI.Persistencia.Repositorios.Usuarios
             {
                 var result = await base.DeleteAsync(id);
                 _logger.LogInformation("Usuario entity eliminado correctamente");
-                result.Data = UsuarioMapperModel.MapperUsuario(result.Data);
                 return result;
 
             }
