@@ -7,8 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="MapperDtos\" />
-    <Folder Include="Sevicios\Inventarios\" />
     <Folder Include="Sevicios\Usuarios\" />
     <Folder Include="ValidatorHelpers\ValidatorLogic\" />
   </ItemGroup>
@@ -16,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\SGI.Domain\SGI.Domain.csproj" />
     <ProjectReference Include="..\SGI.Models\SGI.Models.csproj" />
+    <ProjectReference Include="..\SGI.Persistencia\SGI.Persistencia.csproj" />
   </ItemGroup>
 
 </Project>

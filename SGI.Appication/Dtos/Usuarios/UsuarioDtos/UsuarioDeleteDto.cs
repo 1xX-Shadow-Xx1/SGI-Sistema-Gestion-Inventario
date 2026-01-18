@@ -7,6 +7,7 @@
         public string Empleado { get; set; }
         public string Correo { get; set; }
         public string Contraseña { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public bool Activo { get; set; }
     }
 }

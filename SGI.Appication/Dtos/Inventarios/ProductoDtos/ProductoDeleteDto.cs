@@ -16,5 +16,6 @@ namespace SGI.Appication.Dtos.Inventarios.ProductoDtos
         public string? Garantia { get; set; }
         public string? Marca { get; set; }
         public decimal? Size { get; set; }
+        public bool IsDeleted { get; set; } = false;
     }
 }

@@ -10,6 +10,7 @@ namespace SGI.Appication.Dtos.Usuarios.UsuarioDtos
         public string? Correo { get; set; }
         public string? Contraseña { get; set; }
         public bool? Activo { get; set; }
+        public bool IsDeleted { get; set; } = false;
         public RolDto? RolDto { get; set; }
     }
 }
